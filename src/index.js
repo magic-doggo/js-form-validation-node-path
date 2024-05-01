@@ -17,3 +17,18 @@ window.onload = () => {
 }
 
 const validate = document.getElementById("validate");
+const submitError = document.getElementById("submit-error");
+const highFive = document.getElementById("high-five")
+function revalidate(event) {
+    checkEmail();
+    checkZip();
+    checkPasswords();
+    if (!checkEmail() || !checkZip() || !checkPasswords()) {
+        highFive.innerText = "";
+        event.preventDefault();
+        submitError.innerText = "Try again after following the requirements above";
+        return;
+    }
+    highFive.innerText = "High 5!";
+}
+validate.addEventListener("click", revalidate)

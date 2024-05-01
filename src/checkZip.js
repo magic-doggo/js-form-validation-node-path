@@ -17,13 +17,15 @@ function checkZip() {
     const ZIPField = document.getElementById("zipcode");
     const constraint = new RegExp(constraints[country][0], "");
     const zipcodeError = document.getElementById("zipcode-error");
-
-    if (constraint.test(ZIPField.value)){
-        // ZIPField.setCustomValidity("");
+    if (ZIPField.value == "") {
+        zipcodeError.innerText = "ZIP code must not be empty!"
+        return false;
+    } else if (constraint.test(ZIPField.value)){
         zipcodeError.innerText = "";
+        return true;
     } else {
-        // ZIPField.setCustomValidity(constraints[country][1]);
         zipcodeError.innerText = constraints[country][1];
+        return false;
     }
 }
 
