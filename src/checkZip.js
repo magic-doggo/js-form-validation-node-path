@@ -15,13 +15,15 @@ function checkZip() {
     };
     const country = document.getElementById("country").value;
     const ZIPField = document.getElementById("zipcode");
-
     const constraint = new RegExp(constraints[country][0], "");
+    const zipcodeError = document.getElementById("zipcode-error");
 
     if (constraint.test(ZIPField.value)){
-        ZIPField.setCustomValidity("");
+        // ZIPField.setCustomValidity("");
+        zipcodeError.innerText = "";
     } else {
-        ZIPField.setCustomValidity(constraints[country][1]);
+        // ZIPField.setCustomValidity(constraints[country][1]);
+        zipcodeError.innerText = constraints[country][1];
     }
 }
 

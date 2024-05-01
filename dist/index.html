@@ -4,30 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
     <form action="">
-        <label for="email">Email:</label>
-        <input type="text" name="email" id="email">
-
-        <label for="country">Country</label>
-        <select name="country" id="country">
-            <option value="ro">Romania</option>
-            <option value="est">Estonia</option>
-            <option value="fr">France</option>
-        </select>
-
-        <label for="zipcode">Zipcode:</label>
-        <input type="text" name="zipcode" id="zipcode">
-
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password">
-
-        <label for="repeat-password">Repeat Password:</label>
-        <input type="password" name="repeat-password" id="repeat-password">
-
-        <input type="submit" value="validate">
+        <ul>
+            <li>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email">
+                <span class="error" id="email-error"></span>
+            </li>
+            <li>
+                <label for="country">Country</label>
+                <select name="country" id="country">
+                    <option value="ro">Romania</option>
+                    <option value="est">Estonia</option>
+                    <option value="fr">France</option>
+                </select>
+            </li>
+            <li>
+                <label for="zipcode">Zipcode:</label>
+                <input type="text" name="zipcode" id="zipcode">
+                <span class="error" id="zipcode-error"></span>
+            </li>
+            <li>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password">
+                <span class="error" id="password-error"></span>
+            </li>
+            <li>
+                <label for="repeat-password">Repeat Password:</label>
+                <input type="password" name="repeat-password" id="repeat-password">
+                <span class="error" id="repeat-password-error"></span>
+            </li>
+            <li>
+                <input type="submit" value="validate" id="validate">
+            </li>
+        </ul>
     </form>
     <script src="main.js"></script>
 </body>
